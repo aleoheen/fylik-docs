@@ -1,0 +1,10 @@
+site_name: Fylik API
+site_description: Fylik API Documentation
+site_author: Alexander Aleoheen
+site_url: https://api.fylik.ru
+repo_url: https://github.com/aleoheen/fylik-server
+edit_uri: blob/master/docs/
+theme: readthedocs
+copyright: aleoheen
+docs_dir: site
+site_dir: docs

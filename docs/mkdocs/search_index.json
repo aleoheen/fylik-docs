@@ -1,0 +1,84 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to Fylik API Documentation\n\n\nFylik API is backend system for \nFylik Project\n.\n\n\nFylik has open source code and public REST API. You can download these sources or use hosted Fylik API in your projects.\n\n\nRequirements\n\n\n\n\nDebian based machine;\n\n\nNodeJS & yarn installed;\n\n\nMongoDB installed;\n\n\n\n\nInstallation\n\n\n\n\n\n\nClone \nthis repository\n to your local machine;\n\n\n\n\n\n\nInstall all dependencies executing \nyarn install\n\n\n\n\n\n\nConfiguring\n\n\nCreate an .env file in root directory and fill it:\n\n\n\n\n\n\n\n\nParameter\n\n\nDescription\n\n\nAdditional info\n\n\nExample\n\n\n\n\n\n\n\n\n\n\nHTTP_IP\n\n\nHTTP Server IP\n\n\n\n\n127.0.0.1\n\n\n\n\n\n\nHTTP_PORT\n\n\nHTTP Server Port\n\n\n\n\n8011\n\n\n\n\n\n\nMAX_FILE_SIZE\n\n\nMax upload file size\n\n\nIn megabytes\n\n\n100\n\n\n\n\n\n\nMAX_FILES_AMOUNT\n\n\nMax upload files amount per IP\n\n\n\n\n5\n\n\n\n\n\n\nMIN_FILE_TERM, MAX_FILE_TERM\n\n\nUpload file terms. Generating randomly every file upload\n\n\nIn seconds\n\n\n180 1800\n\n\n\n\n\n\nFILE_STORAGE_SIZE\n\n\nSize in megabytes available for all uploaded files\n\n\nIn megabytes\n\n\n10240\n\n\n\n\n\n\nUPLOAD_DIR\n\n\nDirectory where uploaded file located in\n\n\nAbsolute path\n\n\n/home/alexander/projects/fylik-server/uploads\n\n\n\n\n\n\nFILE_BASE_URL\n\n\nMain URL for Fylik API\n\n\n\n\nhttps://api.fylik.ru\n\n\n\n\n\n\nDB_NAME\n\n\nMongoDB Database name\n\n\n\n\nfylik\n\n\n\n\n\n\nDB_HOST\n\n\nMongoDB host\n\n\n\n\n127.0.0.1:27017\n\n\n\n\n\n\n\n\nRunning API\n\n\nIn production mode\n\n\nyarn start\n\n\nIn development mode\n\n\nyarn run debug",
+            "title": "Home"
+        },
+        {
+            "location": "/#welcome-to-fylik-api-documentation",
+            "text": "Fylik API is backend system for  Fylik Project .  Fylik has open source code and public REST API. You can download these sources or use hosted Fylik API in your projects.",
+            "title": "Welcome to Fylik API Documentation"
+        },
+        {
+            "location": "/#requirements",
+            "text": "Debian based machine;  NodeJS & yarn installed;  MongoDB installed;",
+            "title": "Requirements"
+        },
+        {
+            "location": "/#installation",
+            "text": "Clone  this repository  to your local machine;    Install all dependencies executing  yarn install",
+            "title": "Installation"
+        },
+        {
+            "location": "/#configuring",
+            "text": "Create an .env file in root directory and fill it:     Parameter  Description  Additional info  Example      HTTP_IP  HTTP Server IP   127.0.0.1    HTTP_PORT  HTTP Server Port   8011    MAX_FILE_SIZE  Max upload file size  In megabytes  100    MAX_FILES_AMOUNT  Max upload files amount per IP   5    MIN_FILE_TERM, MAX_FILE_TERM  Upload file terms. Generating randomly every file upload  In seconds  180 1800    FILE_STORAGE_SIZE  Size in megabytes available for all uploaded files  In megabytes  10240    UPLOAD_DIR  Directory where uploaded file located in  Absolute path  /home/alexander/projects/fylik-server/uploads    FILE_BASE_URL  Main URL for Fylik API   https://api.fylik.ru    DB_NAME  MongoDB Database name   fylik    DB_HOST  MongoDB host   127.0.0.1:27017",
+            "title": "Configuring"
+        },
+        {
+            "location": "/#running-api",
+            "text": "",
+            "title": "Running API"
+        },
+        {
+            "location": "/#in-production-mode",
+            "text": "yarn start",
+            "title": "In production mode"
+        },
+        {
+            "location": "/#in-development-mode",
+            "text": "yarn run debug",
+            "title": "In development mode"
+        },
+        {
+            "location": "/last/",
+            "text": "Get last uploaded files (polling)\n\n\nYou can use long polling to subscribe uploaded files list updates.\n\n\nSend GET requests to \nhttps://api.fylik.ru/last\n. \nNote that Fylik API server will return you last 50 files\n. Server will response you max one time per second.\n\n\nYou should get response like this:\n\n\n{\n    \"code\": 200,\n    \"files\": [\n        {\n            \"name\": \"sublime.png\",\n            \"size\": 168182,\n            \"type\": \"image/png\",\n            \"uid\": \"eb58\",\n            \"link\": \"http://192.168.1.127:8001/dl/eb58\",\n            \"expires\": 1571740828005,\n            \"timestamp\": 1571740321005\n        }\n    ],\n    \"total\": 1,\n    \"now\": 1571740720900\n}\n\n\n\nWhere:\n\n\n\n\n\n\n\n\nParameter\n\n\nDescription\n\n\nAdditional info\n\n\n\n\n\n\n\n\n\n\ncode\n\n\nHTTP status code\n\n\n\n\n\n\n\n\nfiles\n\n\nArray of loaded files\n\n\nMax 50 files\n\n\n\n\n\n\ntotal\n\n\nAmout of all loaded files\n\n\n\n\n\n\n\n\nnow\n\n\nCurrent timestamp\n\n\nIn milliseconds",
+            "title": "Last"
+        },
+        {
+            "location": "/last/#get-last-uploaded-files-polling",
+            "text": "You can use long polling to subscribe uploaded files list updates.  Send GET requests to  https://api.fylik.ru/last .  Note that Fylik API server will return you last 50 files . Server will response you max one time per second.  You should get response like this:  {\n    \"code\": 200,\n    \"files\": [\n        {\n            \"name\": \"sublime.png\",\n            \"size\": 168182,\n            \"type\": \"image/png\",\n            \"uid\": \"eb58\",\n            \"link\": \"http://192.168.1.127:8001/dl/eb58\",\n            \"expires\": 1571740828005,\n            \"timestamp\": 1571740321005\n        }\n    ],\n    \"total\": 1,\n    \"now\": 1571740720900\n}  Where:     Parameter  Description  Additional info      code  HTTP status code     files  Array of loaded files  Max 50 files    total  Amout of all loaded files     now  Current timestamp  In milliseconds",
+            "title": "Get last uploaded files (polling)"
+        },
+        {
+            "location": "/list/",
+            "text": "Get uploaded files list\n\n\nSend GET request to \nhttps://api.fylik.ru/list\n. You can provide \noffset\n parameter to skip files. \nNote that Fylik API server will return max 50 files per response\n.\n\n\nYou should get response like this:\n\n\n{\n    \"code\": 200,\n    \"files\": [\n        {\n            \"name\": \"sublime.png\",\n            \"size\": 168182,\n            \"type\": \"image/png\",\n            \"uid\": \"eb58\",\n            \"link\": \"http://192.168.1.127:8001/dl/eb58\",\n            \"expires\": 1571740828005,\n            \"timestamp\": 1571740321005\n        }\n    ],\n    \"total\": 1,\n    \"now\": 1571740720900\n}\n\n\n\nWhere:\n\n\n\n\n\n\n\n\nParameter\n\n\nDescription\n\n\nAdditional info\n\n\n\n\n\n\n\n\n\n\ncode\n\n\nHTTP status code\n\n\n\n\n\n\n\n\nfiles\n\n\nArray of loaded files\n\n\nMax 50 files\n\n\n\n\n\n\ntotal\n\n\nAmout of all loaded files\n\n\n\n\n\n\n\n\nnow\n\n\nCurrent timestamp\n\n\nIn milliseconds",
+            "title": "List"
+        },
+        {
+            "location": "/list/#get-uploaded-files-list",
+            "text": "Send GET request to  https://api.fylik.ru/list . You can provide  offset  parameter to skip files.  Note that Fylik API server will return max 50 files per response .  You should get response like this:  {\n    \"code\": 200,\n    \"files\": [\n        {\n            \"name\": \"sublime.png\",\n            \"size\": 168182,\n            \"type\": \"image/png\",\n            \"uid\": \"eb58\",\n            \"link\": \"http://192.168.1.127:8001/dl/eb58\",\n            \"expires\": 1571740828005,\n            \"timestamp\": 1571740321005\n        }\n    ],\n    \"total\": 1,\n    \"now\": 1571740720900\n}  Where:     Parameter  Description  Additional info      code  HTTP status code     files  Array of loaded files  Max 50 files    total  Amout of all loaded files     now  Current timestamp  In milliseconds",
+            "title": "Get uploaded files list"
+        },
+        {
+            "location": "/upload/",
+            "text": "Uploading files\n\n\nYou can upload any file to Fylik API. But before it you should check upload limits\n\n\nFile upload limits\n\n\nSend GET request to \nhttps://api.fylik.ru/limits\n.\n\n\nYou'll receive limits in JSON format.\n\n\n{\n    \"max_files_amount\": 5,\n    \"max_file_size\": 100\n}\n\n\n\nUpload a file\n\n\nSend POST request to \nhttps://api.fylik.ru/upload\n with your file as \nfile\n parameter.\n\n\nYou should get response like this:\n\n\n{\n    \"code\": 201,\n    \"file\": {\n        \"name\": \"sublime.png\",\n        \"size\": 168182,\n        \"type\": \"image/png\",\n        \"uid\": \"eb58\",\n        \"link\": \"http://192.168.1.127:8001/dl/eb58\",\n        \"expires\": 1571740828005,\n        \"timestamp\": 1571740321005\n    },\n    \"now\": 1571740321075\n}\n\n\n\nWhere:\n\n\n\n\n\n\n\n\nParameter\n\n\nDescription\n\n\nAdditional info\n\n\n\n\n\n\n\n\n\n\ncode\n\n\nHTTP status code\n\n\n\n\n\n\n\n\nfile.name\n\n\nName of uploaded file\n\n\n\n\n\n\n\n\nfile.size\n\n\nSize of uploaded file (in bytes)\n\n\n\n\n\n\n\n\nfile.type\n\n\nMIME type of uploaded file\n\n\n\n\n\n\n\n\nfile.uid\n\n\nUnique file ID\n\n\nIn hex\n\n\n\n\n\n\nfile.link\n\n\nUploaded file download link\n\n\n\n\n\n\n\n\nfile.expires\n\n\nTimestamp when uploaded file will be automatically removed\n\n\nIn milliseconds\n\n\n\n\n\n\nfile.timestamp\n\n\nTimestamp when you uploaded the file\n\n\nIn milliseconds\n\n\n\n\n\n\nnow\n\n\nTimestamp of now\n\n\nIn milleseconds",
+            "title": "Upload"
+        },
+        {
+            "location": "/upload/#uploading-files",
+            "text": "You can upload any file to Fylik API. But before it you should check upload limits",
+            "title": "Uploading files"
+        },
+        {
+            "location": "/upload/#file-upload-limits",
+            "text": "Send GET request to  https://api.fylik.ru/limits .  You'll receive limits in JSON format.  {\n    \"max_files_amount\": 5,\n    \"max_file_size\": 100\n}",
+            "title": "File upload limits"
+        },
+        {
+            "location": "/upload/#upload-a-file",
+            "text": "Send POST request to  https://api.fylik.ru/upload  with your file as  file  parameter.  You should get response like this:  {\n    \"code\": 201,\n    \"file\": {\n        \"name\": \"sublime.png\",\n        \"size\": 168182,\n        \"type\": \"image/png\",\n        \"uid\": \"eb58\",\n        \"link\": \"http://192.168.1.127:8001/dl/eb58\",\n        \"expires\": 1571740828005,\n        \"timestamp\": 1571740321005\n    },\n    \"now\": 1571740321075\n}  Where:     Parameter  Description  Additional info      code  HTTP status code     file.name  Name of uploaded file     file.size  Size of uploaded file (in bytes)     file.type  MIME type of uploaded file     file.uid  Unique file ID  In hex    file.link  Uploaded file download link     file.expires  Timestamp when uploaded file will be automatically removed  In milliseconds    file.timestamp  Timestamp when you uploaded the file  In milliseconds    now  Timestamp of now  In milleseconds",
+            "title": "Upload a file"
+        }
+    ]
+}
